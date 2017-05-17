@@ -22,8 +22,8 @@ namespace MVCFoundation.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
+            ViewBag.Message = "Meet Our Sales Staff";
+            ViewBag.SalesEmail = "sales@company.com";
             return View();
         }
     }
