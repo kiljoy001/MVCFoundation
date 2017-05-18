@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCFoundation.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,9 +16,16 @@ namespace MVCFoundation.Controllers
         }
 
         // GET: Customer/Details/5
+        [Route("Customer/{id:int}")]
+        [Route("Customer/Detail/{id:int}")]     
         public ActionResult Details(int id)
         {
-            return View();
+            var customer = new CustomerModel
+            {
+                EmailAddress = "carlton@company.com",
+                FirstName = "Carlton"
+            };
+            return View(customer);
         }
 
         // GET: Customer/Create
