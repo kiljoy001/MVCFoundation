@@ -93,5 +93,22 @@ namespace MVCFoundation.Controllers
                 return View();
             }
         }
+
+        public ActionResult Search()
+        {
+            return Content("Search Reached");
+        }
+
+        public ActionResult GetById(int id)
+        {
+            var customers = new List<CustomerModel>
+            {
+                new CustomerModel {Id =1, EmailAddress = "carl@company.com", FirstName="Carl"},
+                new CustomerModel {Id=2, EmailAddress = "lisa@company.com", FirstName="Lisa"},
+                new CustomerModel {Id=3, EmailAddress= "joanna@company.com", FirstName="Joanna"}
+            };
+            var customer = customers.FirstOrDefault<CustomerModel>(c => c.Id.Equals(id));
+            return View("Details", customer);
+        }
     }
 }

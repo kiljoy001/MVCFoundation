@@ -17,5 +17,7 @@ namespace MVCFoundation.Models
         [EmailAddress]
         [Required]
         public string EmailAddress { get; set; }
+
+        public int Id { get; set; }
     }
 }
